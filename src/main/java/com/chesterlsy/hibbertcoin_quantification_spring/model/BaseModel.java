@@ -14,16 +14,16 @@ import java.util.Date;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, allowGetters = true)
-@Getter @Setter @NoArgsConstructor
-public abstract class BasePlayer implements Serializable {
+@Getter @Setter @ToString @NoArgsConstructor
+public abstract class BaseModel implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Setter(AccessLevel.PROTECTED)
-    private Long id;
-
-    @NotBlank
-    private String name;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Setter(AccessLevel.PROTECTED)
+//    private Long id;
+//
+//    @NotBlank
+//    private String name;
 
     @Column(nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
